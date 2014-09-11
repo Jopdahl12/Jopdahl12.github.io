@@ -1,19 +1,22 @@
 <style>
+body {
+  background-color: lightblue;
+}
 head {
   color: blue;
-  font-size: 28
+  font-size: 28;
 }
 h1 {
-  font: sans-serif
-  font-size: 20
+  font: sans-serif;
+  font-size: 20;
 }
 p {
-  font: sans-serif
+  font: sans-serif;
   font-size: 12;
 }
 h2 {
-  font: sans-serif
-  font-size: 18
+  font: sans-serif;
+  font-size: 18;
   color: yellow;
 }
 </style>
