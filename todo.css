@@ -2,6 +2,7 @@
 ul {
 list-style-type:square;
 color:black;
+font-style:fontawesome;
 }
 .high {
 color:red;
@@ -12,8 +13,7 @@ color:pink;
 .low {
 color:blue;
 }
-.done-check::before {
+.done-check {
 text-decoration: line-through;
-
 }
 </style>
