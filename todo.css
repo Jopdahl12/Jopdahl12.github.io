@@ -5,16 +5,16 @@
 	list-style-type:square;
 	color:black;
 }
-ul.high {
+li.high {
 	color:red;
 }
-ul.med {
+li.med {
 	color:light red;
 }
-ul.low {
+li.low {
 	color:blue;
 }
-ul.done {
+li.done {
 	text-decoration: line-through;
 }
 </style></body></html>
