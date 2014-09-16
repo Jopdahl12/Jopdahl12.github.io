@@ -1,5 +1,6 @@
 <style>
 <<<<<<< HEAD
+<<<<<<< HEAD
 background {
   background-color: lightblue;
 }
@@ -34,6 +35,28 @@ p {
   color:white;
 }
 h2 {
+=======
+head {
+  font-style:timesnewroman;
+  font-size:30;
+  Color: lightblue;
+}
+
+body {
+  background-color: blue;
+}
+h1 {
+  font-style:timesnewroman;
+  font-size:20;
+  color: lightblue;
+}
+p {
+  font-style:arial;
+  font-size:12;
+  color:white;
+}
+h2 {
+>>>>>>> 90a08a348684e5b5a411652bab2226a790e4c65c
   font-style: timesnewroman;
   font-size:18;
   color: lightblue;
@@ -45,6 +68,9 @@ a:link{
 a:visited{
   font-style:arial;
   color: red;
+<<<<<<< HEAD
+>>>>>>> 90a08a348684e5b5a411652bab2226a790e4c65c
+=======
 >>>>>>> 90a08a348684e5b5a411652bab2226a790e4c65c
 }
 </style>
