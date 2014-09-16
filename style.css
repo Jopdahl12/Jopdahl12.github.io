@@ -1,18 +1,50 @@
 <style>
-body {
+<<<<<<< HEAD
+background {
   background-color: lightblue;
 }
 h1 {
-  font: sans-serif;
-  font-size: 20;
+  font:20, Times New Roman,serif;
+  color: blue;
 }
 p {
-  font: sans-serif;
-  font-size: 12;
+  font:12, arial, sans-serif;
 }
 h2 {
-  font: sans-serif;
-  font-size: 18;
+  font:18, Times New Roman, serif;;
   color: yellow;
+=======
+head {
+  font-style:timesnewroman;
+  font-size:30;
+  Color: lightblue;
+}
+
+body {
+  background-color: blue;
+}
+h1 {
+  font-style:timesnewroman;
+  font-size:20;
+  color: lightblue;
+}
+p {
+  font-style:arial;
+  font-size:12;
+  color:white;
+}
+h2 {
+  font-style: timesnewroman;
+  font-size:18;
+  color: lightblue;
+}
+a:link{
+  font-style:arial;
+  color:pink;
+}
+a:visited{
+  font-style:arial;
+  color: red;
+>>>>>>> 90a08a348684e5b5a411652bab2226a790e4c65c
 }
 </style>
