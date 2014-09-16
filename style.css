@@ -1,6 +1,7 @@
 <style>
 head {
-  font: 30, Times New Roman;
+  font:timesnewroman;
+  font-size:30;
   Color: lightblue;
 }
 
@@ -8,15 +9,18 @@ body {
   background-color: blue;
 }
 h1 {
-  font:20, Times New Roman,serif;
+  font:timesnewroman;
+  font-size:20;
   color: lightblue;
 }
 p {
-  font:12, arial, sans-serif;
+  font:arial;
+  font-size:12;
   color:white;
 }
 h2 {
-  font:18, Times New Roman, serif;;
+  font: timesnewroman;
+  font-size:18;
   color: lightblue;
 }
 </style>
