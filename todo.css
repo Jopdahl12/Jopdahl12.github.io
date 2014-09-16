@@ -1,0 +1,20 @@
+<html>
+<body>
+<style>
+<ul>{
+	list-style-type:square;
+	color:black;
+}
+.high {
+	color:red;
+}
+.med {
+	color:light red;
+}
+.low {
+	color:blue;
+}
+.done {
+	text-decoration: line-through;
+}
+</style></body></html>
