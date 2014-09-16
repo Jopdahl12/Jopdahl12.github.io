@@ -1,6 +1,6 @@
 <style>
 head {
-  font:timesnewroman;
+  font-style:timesnewroman;
   font-size:30;
   Color: lightblue;
 }
@@ -9,18 +9,26 @@ body {
   background-color: blue;
 }
 h1 {
-  font:timesnewroman;
+  font-style:timesnewroman;
   font-size:20;
   color: lightblue;
 }
 p {
-  font:arial;
+  font-style:arial;
   font-size:12;
   color:white;
 }
 h2 {
-  font: timesnewroman;
+  font-style: timesnewroman;
   font-size:18;
   color: lightblue;
+}
+a:link{
+  font-style:arial;
+  color:pink;
+}
+a:visited{
+  font-style:arial;
+  color: red;
 }
 </style>
