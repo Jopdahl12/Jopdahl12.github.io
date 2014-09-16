@@ -1,18 +1,18 @@
 <style>
-<ul>{
+ul {
 list-style-type:square;
 color:black;
 }
-li.high {
+.high {
 color:red;
 }
-li.med {
+.med {
 color:lightred;
 }
-li.low {
+.low {
 color:blue;
 }
-li.done {
+.done {
 text-decoration: line-through;
 }
 </style>
