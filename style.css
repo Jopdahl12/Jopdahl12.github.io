@@ -3,16 +3,14 @@ body {
   background-color: lightblue;
 }
 h1 {
-  font: sans-serif;
-  font-size: 20;
+  font:20, Times New Roman,serif;
+  color: blue;
 }
 p {
-  font: sans-serif;
-  font-size: 12;
+  font:12, arial, sans-serif;
 }
 h2 {
-  font: sans-serif;
-  font-size: 18;
+  font:18, Times New Roman, serif;;
   color: yellow;
 }
 </style>
