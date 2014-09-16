@@ -1,6 +1,11 @@
 <style>
+head {
+  font: 30, Times New Roman;
+  Color:blue;
+}
+
 body {
-  background-color: lightblue;
+  color: lightblue;
 }
 h1 {
   font:20, Times New Roman,serif;
