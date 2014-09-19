@@ -1,10 +1,4 @@
-<html>
 <style>
-<head>
-<header>
-h1 {
-display: inline;
-}
 ul {
 background-color: tan;
 border: dashed 15px brown;
@@ -14,6 +8,9 @@ li {
 display:inline;
 color: blue;
 margin: 25px;
+}
+h1 {
+text-size: 35pt;
 }
 a#1 {
 text-size: 35pt;
@@ -27,9 +24,6 @@ a:hover {
 background-color: lightgreen;
 text-decoration: underline;
 }}
-</header>
-</head>
-<body>
 body {
 background-color: navyblue;
 }
@@ -42,6 +36,4 @@ color: white;
 img {
 border: 10px black;
 }
-</body>
 </style>
-</html>
