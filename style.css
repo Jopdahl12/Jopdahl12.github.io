@@ -1,76 +1,39 @@
 <style>
-<<<<<<< HEAD
-<<<<<<< HEAD
-background {
-  background-color: lightblue;
-}
+<header>
 h1 {
-  font:20, Times New Roman,serif;
-  color: blue;
+display: inline;
+color: blue;
+}
+ul {
+background-color: tan;
+border: dashed 15px brown;
+}
+li {
+display:inline;
+color: blue;
+}
+a {
+color:blue;
+text-decoration: none;
+}
+a:hover {
+background-color: lightgreen;
+text-decoration: underline;
+}
+a:visited {
+color: purple;
+}
+</header>
+<body>
+h1 {
+color: blue;
 }
 p {
-  font:12, arial, sans-serif;
+background-color: navyblue;
+color: white;
 }
-h2 {
-  font:18, Times New Roman, serif;;
-  color: yellow;
-=======
-head {
-  font-style:timesnewroman;
-  font-size:30;
-  Color: lightblue;
+img {
+border: 10px black;
 }
-
-body {
-  background-color: blue;
-}
-h1 {
-  font-style:timesnewroman;
-  font-size:20;
-  color: lightblue;
-}
-p {
-  font-style:arial;
-  font-size:12;
-  color:white;
-}
-h2 {
-=======
-head {
-  font-style:timesnewroman;
-  font-size:30;
-  Color: lightblue;
-}
-
-body {
-  background-color: blue;
-}
-h1 {
-  font-style:timesnewroman;
-  font-size:20;
-  color: lightblue;
-}
-p {
-  font-style:arial;
-  font-size:12;
-  color:white;
-}
-h2 {
->>>>>>> 90a08a348684e5b5a411652bab2226a790e4c65c
-  font-style: timesnewroman;
-  font-size:18;
-  color: lightblue;
-}
-a:link{
-  font-style:arial;
-  color:pink;
-}
-a:visited{
-  font-style:arial;
-  color: red;
-<<<<<<< HEAD
->>>>>>> 90a08a348684e5b5a411652bab2226a790e4c65c
-=======
->>>>>>> 90a08a348684e5b5a411652bab2226a790e4c65c
-}
+</body>
 </style>
