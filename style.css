@@ -2,7 +2,7 @@
 ul {
 background-color: tan;
 border: dashed 15px brown;
-display: inline;
+margin: 0px;
 }
 li {
 display:inline;
