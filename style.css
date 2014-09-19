@@ -2,7 +2,6 @@
 <header>
 h1 {
 display: inline;
-color: blue;
 }
 ul {
 background-color: tan;
@@ -11,6 +10,11 @@ display:inline;
 }
 li {
 display:inline;
+color: blue;
+margin: 25px;
+}
+a#1 {
+text-size: 35pt;
 color: blue;
 }
 a {
@@ -22,7 +26,6 @@ background-color: lightgreen;
 text-decoration: underline;
 }}
 </header>
-<body>
 body {
 background-color: navyblue;
 }
@@ -30,11 +33,9 @@ h1 {
 color: white;
 }
 p {
-background-color: navyblue;
 color: white;
 }
 img {
 border: 10px black;
 }
-</body>
 </style>
