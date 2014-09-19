@@ -3,6 +3,7 @@ ul {
 background-color: tan;
 border: dashed brown;
 margin: 0px;
+padding: 25px;
 }
 li {
 display:inline;
