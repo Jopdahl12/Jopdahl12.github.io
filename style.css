@@ -29,12 +29,14 @@ background-color: lightgreen;
 text-decoration: underline;
 }
 body {
-background-color: navyblue;
+background-color: dodgerblue;
+margin: 0px;
+padding: 25px;
 }
 p {
 color: white;
 }
 img {
-border: 10px black;
+border: solid 10px black;
 }
 </style>
