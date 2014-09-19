@@ -1,5 +1,5 @@
 <style>
-ul {
+ul.navbar {
 background-color: tan;
 border: dashed brown;
 margin: 0px;
@@ -13,7 +13,7 @@ margin: 25px;
 h1 {
 display: inline;
 text-size: 35pt;
-volor: blue;
+color: blue;
 }
 a#1 {
 text-size: 35pt;
