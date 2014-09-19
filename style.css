@@ -2,7 +2,7 @@
 ul {
 background-color: tan;
 border: dashed 15px brown;
-display:inline;
+display: inline;
 }
 li {
 display:inline;
@@ -10,7 +10,9 @@ color: blue;
 margin: 25px;
 }
 h1 {
+display: inline;
 text-size: 35pt;
+volor: blue;
 }
 a#1 {
 text-size: 35pt;
@@ -23,12 +25,9 @@ text-decoration: none;
 a:hover {
 background-color: lightgreen;
 text-decoration: underline;
-}}
+}
 body {
 background-color: navyblue;
-}
-h1 {
-color: white;
 }
 p {
 color: white;
