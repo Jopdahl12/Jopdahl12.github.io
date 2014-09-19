@@ -1,13 +1,11 @@
 <style>
 ul {
 background-color: tan;
-border: dashed 15px brown;
+border: dashed brown;
 margin: 0px;
 }
 li {
 display:inline;
-background-color; tan;
-border; dashed 15px brown;
 color: blue;
 margin: 25px;
 }
