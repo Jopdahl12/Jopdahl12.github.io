@@ -6,6 +6,8 @@ display: inline;
 }
 li {
 display:inline;
+background-color; tan;
+border; dashed 15px brown;
 color: blue;
 margin: 25px;
 }
