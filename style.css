@@ -1,4 +1,5 @@
 <style>
+<head>
 <header>
 h1 {
 display: inline;
@@ -26,6 +27,8 @@ background-color: lightgreen;
 text-decoration: underline;
 }}
 </header>
+</head>
+<body>
 body {
 background-color: navyblue;
 }
@@ -38,4 +41,5 @@ color: white;
 img {
 border: 10px black;
 }
+</body>
 </style>
