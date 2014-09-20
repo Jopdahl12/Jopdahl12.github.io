@@ -1,4 +1,9 @@
 <style>
+ul {
+display:inline;
+background-color: tan;
+border: dashed maroon;
+}
 li {
 display:inline;
 color: blue;
