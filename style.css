@@ -1,6 +1,14 @@
-<style>
 body {
-	width: 100%;
+	margin: 0px;
+	margin-left: 0px;
+	padding: 0px;
+}
+a {
+	text-decoration: none;
+}
+a:visited {
+	color: blue;
+	text-decoration: none;
 }
 header {
 	position: fixed;
@@ -8,38 +16,49 @@ header {
 	left: 0px;
 	width: 100%;
 	height: 40px;
-	background: blue;
+	background: steelblue;
 	color: white;
 	font-size: 25pt;
+	padding-left: 10px;
 }
 nav {
 	margin-top: 40px;
 	margin-bottom: 0px;
 	margin-left: 0px;
-	background: tan;
-	border: dashed maroon;
+	background: darkgrey;
+	border: dotted oldlace;
 	width: 100%;
 }
 #links {
 	width: 100%;
 	height: 20px;
 	margin-top: 20px;
+	margin-right: 0px;
+	margin-left:0px;
+	padding-left:0px;
 }
 .navbar {
 	display: inline;
 	color:blue;
+	text-decoration: none;
 	padding: 10px;
 }
 .navbar:hover {
-	background: lightgreen;
+	background: oldlace;
 	text-decoration: underline;
 	padding: 10px;
+	text-decoration: underline;
 }
-section {
+.navbar:visited {
+	color:blue;
+}
+section { 
+	display:inline;
 	margin: 0px;
 	float: left;
-	width: 20%;
-	height: 1000px;
+	width: 18%;
+	height: 500px;
+	padding: 1%;
 	background: skyblue;
 }
 #sidebar {
@@ -70,6 +89,7 @@ section {
 }
 .red {
 	position: relative;
+	width: 100%;
 	left: 100%;
 	top: -36px;
 	background: skyblue;
@@ -94,10 +114,22 @@ section {
 }
 aside {
 	float: right;
-	width: 80%;
-	background: blue;
-	margin: 0px; 
+	margin: 0px;
+	width: 78%;
+	height:500px;
+	background: dodgerblue;
+	padding: 1%;
+	color: white;
+	overflow: scroll;
+}
+aside img {
+	margin: 10px;
+}
+footer {
+	width: 100%;
+	margin: 0px;
 	padding: 10px;
+	clear: both;
+	background: steelblue;
 	color: white;
 }
-</stlye>
