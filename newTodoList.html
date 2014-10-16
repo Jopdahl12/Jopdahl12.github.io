@@ -1,0 +1,90 @@
+<html>
+<head>
+<title> To-Do List </title>
+<style>
+h1 {
+	text-align: center;
+}
+#ULcontainer {
+	display: block;
+	background: grey;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid black;
+}
+ul {
+	list-style-type:none;
+}
+ul .High {
+	color: red;
+}
+ul .Medium {
+	color: blue;
+}
+ul .Low {
+	color: green;
+}
+#inputs {
+	margin-left: 10%;
+}
+</style>
+</head>
+<body> 
+<script type="text/javascript" src="modelView.js"> </script>
+<h1> To-Do List </h1>
+<div id="ULcontainer">
+<ul id="Todo"> 
+</ul>
+</div>
+<br>
+<div id='inputs'>
+<label for="newtask"> New Task </label>
+<input id="newtask" type="text" value=""> </input>
+<br>
+<label for="due"> Due Date </label>
+<input id="due" type="date" value=none> </input>
+<br>
+<label for="under"> Project </label>
+<input id="under" type="text" value=""> </input>
+<br>
+<select id="priority">
+<option value=High selected="selected"> High </option>
+<option value=Medium> Medium </option>
+<option value=Low> Low </option>
+</select>
+<br>
+<button id='add'> Add </button>
+<button id="del"> Delete </button>
+</div>
+<script type="text/javascript">
+var model = new ListModel([]); 
+function loadList() {
+	var storedList = localStorage.getItem("todoSave");
+	var LoadedLIST = JSON.parse(storedList);
+	for (item=0; item <LoadedLIST.length; item++){
+		model.addItem(LoadedLIST[item]);
+		console.log(item);
+	}
+}
+	console.log(model);
+
+var view = new ListView(model, {
+	'list' : document.getElementById('Todo'),
+	'addButton' : document.getElementById('add'),
+	'delButton' : document.getElementById('del'),
+	'taskbox' : document.getElementById('newtask'),
+	'priority' : document.getElementById('priority'),
+	'project' : document.getElementById('under'),
+	'due' : document.getElementById('due'),
+	'cb' : document.getElementsByTagName('cb')
+	})
+
+var controller = new ListController(model, view);
+view.show();
+
+window.onload=loadList
+
+</script>
+</body>
+</html>
