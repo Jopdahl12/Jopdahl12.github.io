@@ -32,7 +32,7 @@ function handleAuthClick(event) {
 }
 
 function makeApiCall() {
-    gapi.client.load('youtube', 'v3', search);
+    gapi.client.load('youtube', 'v3').then(search());
 }
 
 function search() {
