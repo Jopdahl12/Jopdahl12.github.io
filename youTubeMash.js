@@ -5,7 +5,7 @@ function handleClientLoad() {
 
 function checkAuth() {
   gapi.auth.authorize({
-	client_id: client_id:595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com,
+	client_id: 595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com,
 	scope:'https://www.googleapis.com/youtube/v3/videos',
 	immediate: true}, handleAuthResult);
 }
