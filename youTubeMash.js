@@ -3,7 +3,7 @@ function onClientLoad() {
 }
 
 function onYouTubeApiLoad() {
-	gapi.client.setApiKey('AIzaSyCj3BULOqAVQvM0Fen88MTw8QdFvASrc08');
+	gapi.client.setApiKey('AIzaSyBn12Ilgr8e714Ed4y2qTpcX8GmRyqtWb4');
 	search();
 }
 
