@@ -6,7 +6,7 @@ function onClientLoad() {
 // Called automatically when YouTube API interface is loaded (see line 9).
 function onYouTubeApiLoad() {
     gapi.client.setApiKey('AIzaSyBn12Ilgr8e714Ed4y2qTpcX8GmRyqtWb4');
-
+console.log('onyoutubeapiload');
     search();
 }
 
