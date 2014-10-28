@@ -7,16 +7,13 @@ function handleClientLoad() {
 function checkAuth() {
   gapi.auth.authorize({
 	client_id: '595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com',
-	scope: 'https://www.googleapis.com/youtube/v3/videos',
+	scope: 'https://www.googleapis.com/youtube/v3',
 	immediate: true}, handleAuthResult);
-  console.log('handling auth result');
 }
 
 function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
-  console.log('got auth button');
   if (authResult && !authResult.error) {
-  console.log('inif statement');
     authorizeButton.style.visibility = 'hidden';
     makeApiCall();
   } else {
@@ -28,7 +25,7 @@ function handleAuthResult(authResult) {
 function handleAuthClick(event) {
   gapi.auth.authorize({
   	client_id:'595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com',
-  	scope: 'https://www.googleapis.com/youtube/v3/videos',
+  	scope: 'https://www.googleapis.com/youtube/v3',
   	immediate: false}, handleAuthResult);
   return false;
 }
