@@ -14,7 +14,9 @@ function checkAuth() {
 
 function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
+  console.log('got auth button');
   if (authResult && !authResult.error) {
+  console.log('inif statement');
     authorizeButton.style.visibility = 'hidden';
     makeApiCall();
   } else {
