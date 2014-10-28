@@ -1,10 +1,37 @@
 function handleClientLoad() {
-    gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+  gapi.client.setApiKey('AIzaSyBn12Ilgr8e714Ed4y2qTpcX8GmRyqtWb4');
+  console.log('apikeyset');
+  window.setTimeout(checkAuth,1);
 }
 
-function onYouTubeApiLoad() {
-	gapi.client.setApiKey('AIzaSyBn12Ilgr8e714Ed4y2qTpcX8GmRyqtWb4');
-	search();
+function checkAuth() {
+  gapi.auth.authorize({
+	client_id: '595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com',
+	scope: 'https://www.googleapis.com/auth/youtube.videos',
+	immediate: true}, handleAuthResult);
+}
+
+function handleAuthResult(authResult) {
+  var authorizeButton = document.getElementById('authorize-button');
+  if (authResult && !authResult.error) {
+    authorizeButton.style.visibility = 'hidden';
+    makeApiCall();
+  } else {
+    authorizeButton.style.visibility = '';
+    authorizeButton.onclick = handleAuthClick;
+  }
+}
+
+function handleAuthClick(event) {
+  gapi.auth.authorize({
+  	client_id:'595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com',
+  	scope: 'https://www.googleapis.com/youtube/v3/video',
+  	immediate: false}, handleAuthResult);
+  return false;
+}
+
+function makeApiCall() {
+    gapi.client.load('youtube', 'v3').then(search());
 }
 
 function search() {
@@ -52,3 +79,4 @@ function playVideo(ID) {
 	var videoPlay = document.getElementById('vid');
 	videoPlay.src= source;
 }
+
