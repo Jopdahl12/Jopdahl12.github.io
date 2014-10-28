@@ -1,7 +1,6 @@
 function handleClientLoad() {
   gapi.client.setApiKey('AIzaSyBn12Ilgr8e714Ed4y2qTpcX8GmRyqtWb4');
-  //window.setTimeout(checkAuth,1);
-  makeApiCall();
+  window.setTimeout(checkAuth,1);
 }
 
 function checkAuth() {
