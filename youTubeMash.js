@@ -1,13 +1,36 @@
-// Called automatically when JavaScript client library is loaded.
-function onClientLoad() {
-    gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+function handleClientLoad() {
+  gapi.client.setApiKey('AIzaSyBn12Ilgr8e714Ed4y2qTpcX8GmRyqtWb4');
+  window.setTimeout(checkAuth,1);
 }
 
-// Called automatically when YouTube API interface is loaded (see line 9).
-function onYouTubeApiLoad() {
-    gapi.client.setApiKey('AIzaSyBn12Ilgr8e714Ed4y2qTpcX8GmRyqtWb4');
-console.log('onyoutubeapiload');
-    search();
+function checkAuth() {
+  gapi.auth.authorize({
+	client_id: client_id:595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com,
+	scope:'https://www.googleapis.com/youtube/v3/videos',
+	immediate: true}, handleAuthResult);
+}
+
+function handleAuthResult(authResult) {
+  var authorizeButton = document.getElementById('authorize-button');
+  if (authResult && !authResult.error) {
+    authorizeButton.style.visibility = 'hidden';
+    makeApiCall();
+  } else {
+    authorizeButton.style.visibility = '';
+    authorizeButton.onclick = handleAuthClick;
+  }
+}
+
+function handleAuthClick(event) {
+  gapi.auth.authorize({
+  	client_id:595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com,
+  	scope:'https://www.googleapis.com/youtube/v3/videos',
+  	immediate: false}, handleAuthResult);
+  return false;
+}
+
+function makeApiCall() {
+    gapi.client.load('youtube', 'v3', search);
 }
 
 function search() {
