@@ -1,5 +1,6 @@
 function handleClientLoad() {
   gapi.client.setApiKey('AIzaSyBn12Ilgr8e714Ed4y2qTpcX8GmRyqtWb4');
+  console.log('apikeyset');
   window.setTimeout(checkAuth,1);
 }
 
@@ -8,6 +9,7 @@ function checkAuth() {
 	client_id: '595419487211-ntpujumuihlk5rh87hlc0datut3q4b5a.apps.googleusercontent.com',
 	scope: 'https://www.googleapis.com/youtube/v3/videos',
 	immediate: true}, handleAuthResult);
+  console.log('handling auth result');
 }
 
 function handleAuthResult(authResult) {
@@ -34,6 +36,7 @@ function makeApiCall() {
 }
 
 function search() {
+  console.log('made it to search');
     var q = document.getElementById("searchbox").value;
     var request = gapi.client.youtube.search.list({
         type: 'video', 
