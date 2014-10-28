@@ -1,4 +1,4 @@
-function handleClientLoad() {
+function onClientLoad() {
     gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
 }
 
