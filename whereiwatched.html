@@ -43,18 +43,21 @@
 	</style>
 </head>
 <body>
+<script type="text/javascript" src="youTubeMash.js"> </script>
+<script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"> </script>
 <div id='header'> 
 	<h1> Look Where I Watched! </h1>
 	</div>
 <div id='searchbar'> 
-		<button id='search'> Search </button>
-		<input type='text'> </input>
+		<button id='search' onclick='search();' > Search </button>
+		<input type='text' onkeydown="if (event.keyCode == 13) document.getElementById('search').click();" > </input>
 	</div>
 <div id='vidbar'> 
-		<ul>
+		<ul id='videos'>
 		</ul>
 </div>
 <div id='viewbox'> 
+<iframe id="vid" width=90% height=90% > </iframe>
 	</div>
 <div id='map'> 
 	</div>
