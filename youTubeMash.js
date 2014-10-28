@@ -11,7 +11,7 @@ function onYouTubeApiLoad() {
 }
 
 function search() {
-    var q = document.getElementById("text").val();
+    var q = document.getElementById("text").value;
     var request = gapi.client.youtube.search.list({
         type: 'video', 
         q: q,
