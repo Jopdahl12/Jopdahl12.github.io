@@ -31,6 +31,7 @@ function createList(str) {
 function selectVideo(vidID) {
 	//Juansfunction(vidID);
 	playVideo(vidID);
+	console.log('onclickworked');
 }
 
 function playVideo(vidID) {
