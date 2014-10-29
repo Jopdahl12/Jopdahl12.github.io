@@ -7,7 +7,8 @@ function loadAPIClientInterfaces() {
 
 // After the API loads, call a function to enable the search box.
 function handleAPILoaded() {
-	$('#search-button').attr('disabled', false);
+	var searchButton = document.getElementById("search-button");
+	searchButton.disabled = false;
 }
 
 // Search for a specified string.
