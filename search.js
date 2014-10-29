@@ -46,6 +46,6 @@ function playVideo(vidID) {
 function clearList() {
 	for (i=0; i < 5; i++) {
 		var entry = document.getElementById("videos");
-		videos.removeChild();
+		entry.removeChild();
 		}
 }
