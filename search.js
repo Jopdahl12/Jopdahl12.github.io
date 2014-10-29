@@ -12,6 +12,7 @@ function search() {
     createList(str)});
 }
 function createList(str) {
+	clearList();
 	var array= JSON.parse(str);
 	console.log(array);
 	var list= document.getElementById("videos");
@@ -40,4 +41,9 @@ function playVideo(vidID) {
 	var source= 'www.youtube.com/watch?v=' + vidID; 
 	var videoPlay = document.getElementById('vid');
 	videoPlay.src= source;
+}
+
+function clearList() {
+	var li_s = $.selctor('theseVids');
+	li_s.parentNode.removeChild(li_s);
 }
