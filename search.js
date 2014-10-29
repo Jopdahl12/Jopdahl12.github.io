@@ -35,7 +35,7 @@ function createList(str) {
 function selectVideo(vidID) {
 	//Juansfunction(vidID);
 	var player = document.getElementById("player");
-	player.loadVideoById( vidID, 5,"large"); 
+	//player.loadVideoById( vidID, 5,"large"); 
 	console.log('onclickworked');
 }
 
