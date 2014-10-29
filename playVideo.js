@@ -23,4 +23,3 @@ var tag = document.createElement('script');
     function onPlayerStateChange() {
         console.log('player changed');
     }
-);
