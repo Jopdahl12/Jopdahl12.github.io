@@ -15,7 +15,9 @@ function createList(str) {
 	var array= JSON.parse(str);
 	console.log(array);
 	var list= document.getElementById("videos");
-	if ($("#videos").has("li").length == 0) {
+	if ($("#videos").has("li").length != 0) {
+		clearList();
+		}
 	for (i=0; i < 5 ; i++) {
 		var entry = document.createElement('li');
 		var thumbnail = document.createElement('img');
@@ -27,11 +29,6 @@ function createList(str) {
 		var ID = array.items[i].id.videoID;
 		entry.onclick = selectVideo(ID);
 		list.appendChild(entry);
-	}
-	}
-	else {
-		clearList();
-		createList(str);
 	}
 }
 
@@ -50,8 +47,5 @@ function playVideo(vidID) {
 
 function clearList() {
 	var entry = document.getElementById("videos");
-	for (i=0; i < 5; i++) {
-	console.log("forloop");
-		entry.removeChild(entry.firstChild);
-		}
+	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
 }
