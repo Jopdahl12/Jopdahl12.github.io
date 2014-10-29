@@ -38,7 +38,7 @@ console.log('handlingresult...');
     loadAPIClientInterfaces();
   } else {
   console.log('un-oh');
-  	document.getElementById('login-link').display='inline';
+  	document.getElementById('login-link').style.display='inline';
     // Make the #login-link clickable. Attempt a non-immediate OAuth 2.0
     // client flow. The current function is called when that flow completes.
     $('#login-link').click(function() {
