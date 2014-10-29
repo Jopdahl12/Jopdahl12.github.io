@@ -28,12 +28,12 @@ function createList(str) {
 	}
 }
 
-selectVideo(vidID) = function() {
+function selectVideo(vidID) {
 	Juansfunction(vidID);
 	playVideo(vidID);
 }
 
-playVideo(vidID) = function() {
+function playVideo(vidID) {
 	var source;
 	var source= 'www.youtube.com/watch?v=' + vidID; 
 	var videoPlay = document.getElementById('vid');
