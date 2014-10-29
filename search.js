@@ -31,7 +31,7 @@ function createList(str) {
 	}
 }
 
-function selectVideo(vidID) {
+function selectVideo(vidID).addEventListener(document.querySelectorAll(".theseVids").onclick) {
 	//Juansfunction(vidID);
 	playVideo(vidID);
 }
