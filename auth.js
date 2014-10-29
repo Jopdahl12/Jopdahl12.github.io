@@ -36,7 +36,6 @@ console.log('handlingresult...');
     $('.pre-auth').hide();
     $('.post-auth').show();
     loadAPIClientInterfaces();
-    console.log('out of auth.js');
   } else {
   console.log('un-oh');
     // Make the #login-link clickable. Attempt a non-immediate OAuth 2.0
