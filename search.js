@@ -11,4 +11,4 @@ function search() {
     var str = JSON.stringify(response.result);
     console.log(str);
 }
-
+}
