@@ -44,7 +44,7 @@ function playVideo(vidID) {
 }
 
 function clearList() {
-	var li_s = querySelctorAll('theseVids');
+	var li_s = document.querySelctorAll('theseVids');
 	if (li_s && li_s.length > 0) {
 	for (i=0; i < 5; i++) {
 		var entry = li_s[i];
