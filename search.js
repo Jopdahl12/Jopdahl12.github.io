@@ -23,7 +23,7 @@ function createList(str) {
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
 		entry.className= "theseVids";
-		entry.onclick=selectVideo(array.items[i].id.videoId);
+		entry.onclick=function() { selectVideo(array.items[i].id.videoId) };
 		list.appendChild(entry);
 	}
 }
