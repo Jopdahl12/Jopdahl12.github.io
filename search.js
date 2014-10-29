@@ -51,6 +51,7 @@ function playVideo(vidID) {
 function clearList() {
 	var entry = document.getElementById("videos");
 	for (i=0; i < 5; i++) {
+	console.log("forloop");
 		entry.removeChild(entry.firstChild);
 		}
 }
