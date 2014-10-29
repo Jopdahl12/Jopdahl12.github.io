@@ -29,7 +29,7 @@ function createList(str) {
 }
 
 function selectVideo(vidID) {
-	Juansfunction(vidID);
+	//Juansfunction(vidID);
 	playVideo(vidID);
 }
 
