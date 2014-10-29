@@ -1,4 +1,3 @@
-
 // Search for a specified string.
 function search() {
   var q = $('#query').val();
