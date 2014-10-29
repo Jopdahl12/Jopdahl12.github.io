@@ -12,10 +12,10 @@ function search() {
     createList(str)});
 }
 function createList(str) {
-	clearList();
 	var array= JSON.parse(str);
 	console.log(array);
 	var list= document.getElementById("videos");
+	if ($("#videos").has("li").length == 0) {
 	for (i=0; i < 5 ; i++) {
 		var entry = document.createElement('li');
 		var thumbnail = document.createElement('img');
@@ -27,6 +27,11 @@ function createList(str) {
 		var ID = array.items[i].id.videoID;
 		entry.onclick = selectVideo(ID);
 		list.appendChild(entry);
+	}
+	}
+	else {
+		clearList();
+		createList(str);
 	}
 }
 
@@ -44,10 +49,8 @@ function playVideo(vidID) {
 }
 
 function clearList() {
-	if (document.getElementById("videos").childNodes) {
 	for (i=0; i < 5; i++) {
 		var entry = document.getElementById("videos");
 		entry.removeChild(entry.firstChild);
 		}
-	}
 }
