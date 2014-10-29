@@ -23,8 +23,19 @@ function createList(str) {
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
 		entry.setClassName= "theseVids";
-		//entry.onclick=playVideo(array.items[i].id.videoId);
+		entry.onclick=selectVideo(array.items[i].id.videoId);
 		list.appendChild(entry);
 	}
 }
 
+selectVideo(vidID) = function() {
+	Juansfunction(vidID);
+	playVideo(vidID);
+}
+
+playVideo(vidID) = function() {
+	var source;
+	var source= 'www.youtube.com/watch?v=' + vidID; 
+	var videoPlay = document.getElementById('vid');
+	videoPlay.src= source;
+}
