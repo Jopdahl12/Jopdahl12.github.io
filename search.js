@@ -2,9 +2,9 @@
 // are required to use the Google APIs JS client. More info is available at
 // http://code.google.com/p/google-api-javascript-client/wiki/GettingStarted#Loading_the_Client
 function loadAPIClientInterfaces() {
-  gapi.client.load('youtube', 'v3', function() {
+  gapi.client.load('youtube', 'v3').then(function() {
     handleAPILoaded();
-  });
+  }));
 }
 
 // After the API loads, call a function to enable the search box.
