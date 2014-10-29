@@ -27,14 +27,18 @@ function createList(str) {
 		entry.appendChild(title);
 		entry.className = "theseVids";
 		var ID = array.items[i].id.videoId;
+		entry.id=ID;
+		entry.onclick = selectVid(ID);
 		list.appendChild(entry);
 	}
 }
 
-function selectVideo(vidID).addEventListener(document.querySelectorAll(".theseVids").onclick) {
-	//Juansfunction(vidID);
-	playVideo(vidID);
-}
+function selectVideo(ID) {
+	//Juan's function
+	playVideo(ID);
+	
+});
+
 function playVideo(ID) {
 	var source;
 	var source= 'http://www.youtube.com/embed/' + ID; 
