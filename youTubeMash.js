@@ -13,7 +13,8 @@ function search() {
     var request = gapi.client.youtube.search.list({
         type: 'video', 
         q: q,
-        part: 'snippet'
+        part: 'snippet',
+        videoEmbeddable: 'true'
     });
     
     // Send the request to the API server,
