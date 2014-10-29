@@ -38,6 +38,7 @@ console.log('handlingresult...');
     loadAPIClientInterfaces();
     console.log('out of auth.js');
   } else {
+  console.log('un-oh');
     // Make the #login-link clickable. Attempt a non-immediate OAuth 2.0
     // client flow. The current function is called when that flow completes.
     $('#login-link').click(function() {
