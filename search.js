@@ -18,7 +18,7 @@ function createList(str) {
 	for (i=0; i < array.length ; i++) {
 		var entry = document.createElement('li');
 		var thumbnail = array[items[i]].snippet.thumbnails.default;
-		var title= document.createTextNode(array[items[i]]snippet.title);
+		var title= document.createTextNode(array[items[i]].snippet.title);
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
 		entry.setClassName= "theseVids";
