@@ -34,17 +34,11 @@ function createList(str) {
 
 function selectVideo(vidID) {
 	//Juansfunction(vidID);
-	//playVideo(vidID);
+	var player = document.getElementById("player");
+	player.loadVideoById(videoId: vidID, startSeconds:5, suggestedQuality:"large"):void; 
 	console.log('onclickworked');
 }
 
-/*function playVideo(vidID) {
-	var source;
-	var source= 'www.youtube.com/watch?v=' + vidID; 
-	var videoPlay = document.getElementById('vid');
-	videoPlay.src= source;
-}
-*/
 function clearList() {
 	var entry = document.getElementById("videos");
 	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
