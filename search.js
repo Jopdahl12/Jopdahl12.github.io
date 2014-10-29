@@ -22,8 +22,9 @@ function createList(str) {
 		var title= document.createTextNode(array.items[i].snippet.title);
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
-		entry.className= "theseVids";
-		entry.onclick=function() { selectVideo(array.items[i].id.videoId) };
+		entry.className = "theseVids";
+		var ID = array.items[i].id.videoID;
+		entry.onclick = selectVideo(ID)
 		list.appendChild(entry);
 	}
 }
