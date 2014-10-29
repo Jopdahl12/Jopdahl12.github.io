@@ -12,6 +12,7 @@ function search() {
     createList(str)});
 }
 function createList(str) {
+	console.log('creating list');
 	var array= JSON.parse(str);
 	console.log(array);
 	var list= document.getElementById("videos");
