@@ -57,3 +57,10 @@ function loadAPIClientInterfaces() {
 	console.log('loading.....');
   gapi.client.load('youtube', 'v3').then(handleAPILoaded);
 }
+
+function handleAPILoaded() {
+	console.log('in handle API loaded');
+	var searchButton = document.getElementById("search-button");
+	searchButton.disabled = false;
+}
+

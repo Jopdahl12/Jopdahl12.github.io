@@ -1,8 +1,3 @@
-function handleAPILoaded() {
-	console.log('in handle API loaded');
-	var searchButton = document.getElementById("search-button");
-	searchButton.disabled = false;
-}
 
 // Search for a specified string.
 function search() {
