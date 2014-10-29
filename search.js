@@ -4,7 +4,8 @@ function search() {
   var request = gapi.client.youtube.search.list({
     type: 'video',
     q: q,
-    part: 'snippet'
+    part: 'snippet',
+    part: 'id'
   });
 
   request.execute(function(response) {
