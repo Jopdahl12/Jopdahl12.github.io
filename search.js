@@ -44,6 +44,11 @@ function playVideo(vidID) {
 }
 
 function clearList() {
-	var li_s = $.selctor('theseVids');
-	li_s.parentNode.removeChild(li_s);
+	var li_s = querySelctorAll('theseVids');
+	if (li_s && li_s.length > 0) {
+	for (i=0; i < 5; i++) {
+		var entry = li_s[i];
+		entry.parentNode.removeChild(entry);
+		}
+		}	
 }
