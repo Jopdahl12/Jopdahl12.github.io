@@ -22,7 +22,7 @@ function createList(str) {
 		var title= document.createTextNode(array.items[i].snippet.title);
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
-		entry.setClassName= "theseVids";
+		entry.className= "theseVids";
 		entry.onclick=selectVideo(array.items[i].id.videoId);
 		list.appendChild(entry);
 	}
