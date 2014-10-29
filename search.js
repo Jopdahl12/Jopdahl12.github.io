@@ -38,7 +38,12 @@ function selectVideo(vidID) {
 	//player.loadVideoById( vidID, 5,"large"); 
 	console.log('onclickworked');
 }
-
+function playVideo(ID) {
+	var source;
+	var source= 'http://www.youtube.com/embed/' + ID; 
+	var videoPlay = document.getElementById('player');
+	videoPlay.src= source;
+}
 function clearList() {
 	var entry = document.getElementById("videos");
 	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
