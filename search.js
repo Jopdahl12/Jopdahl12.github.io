@@ -45,7 +45,7 @@ function selectVid(ID) {
 	console.log('clciked');
 	
 	displayVideoAnalytics(ID);
-	displayChart(ID);
+	getUserChannel(ID);
 	
 }
 function getLocation(){
