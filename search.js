@@ -45,7 +45,7 @@ function selectVid(ID) {
 	console.log('clciked');
 	
 	displayVideoAnalytics(ID);
-	getVideoMetadata(ID);
+	displayChart(ID);
 	
 }
 function getLocation(){
