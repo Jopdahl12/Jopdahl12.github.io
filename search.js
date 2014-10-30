@@ -49,9 +49,9 @@ function selectVid(ID) {
 	initialize(displayVideoAnalytics(ID));
 	
 }
-function getLocation(){
+function getLocation(ID, videoId){
 	
-	//var province = 
+  initialize(displayVideoAnalytics(videoId));
 }
 function getUserChannel() {
   // https://developers.google.com/youtube/v3/docs/channels/list
