@@ -32,11 +32,11 @@ function createList(str) {
 	}
 }
 
-function selectVideo(ID) {
+/*function selectVideo(ID) {
 	//Juan's function
 	console.log('onclick');
 	playVideo(ID);
-}
+}*/
 
 function playVideo(ID) {
 	var source;
