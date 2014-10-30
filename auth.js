@@ -211,7 +211,7 @@ function handleAPILoaded() {
         // See https://developers.google.com/youtube/analytics/v1/#ids
         ids: 'channel==' + channelId,
         dimensions:province,
-        sort:'province'
+        sort:'province',
         // See https://developers.google.com/youtube/analytics/v1/available_reports
         // for details about the different filters and metrics you can request
         // if the "dimensions" parameter value is "day".
