@@ -13,13 +13,6 @@ var ONE_MONTH_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 30;
 
 var channelId;
 
-//google.load('visualization', '1.0', {'packages': ['corechart']});
-
-window.onJSClientLoad = function() {
-	gapi.auth.init(function() {
-    window.setTimeout(checkAuth, 500);
-    });
-};
 // Upon loading, the Google APIs JS client automatically invokes this callback.
 googleApiClientReady = function() {
 	console.log('google client ready');
