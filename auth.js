@@ -219,7 +219,7 @@ function handleAPILoaded() {
         // if the "dimensions" parameter value is "day".
         metrics:'views',
         filters:'claimedStatue==claimed;country==US'
-        //$.getJSONP(YoutubeGet, request, displayVideoAnalytics);
+        $.getJSONP(YoutubeGet, request, displayVideoAnalytics);
         
       });
       request.execute(function(response) {
