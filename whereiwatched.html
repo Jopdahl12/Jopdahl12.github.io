@@ -1,6 +1,9 @@
 <html>
 <head>
 	<style>
+		body {
+			background: darkgrey; 
+		}
 		#header h1 {
 			margin: 0;
 			height: 20px;
@@ -16,15 +19,15 @@
 			width: 100%;
 			background: grey;
 			height: 20px;
-			position: relative;
+			display:block;
+			position: fixed;
 			top: 20px;	
 		}
 		#vidbar {
 			float: left;
 			width:40%;
-			background:red;
 			margin-top:20px;
-			height: 100%;
+			height: 1000px;
 		}
 		#videos {
 			width: 100%;
@@ -42,16 +45,21 @@
 			min-width: 640px;
 			min-height: 390px;
 			margin-top: 20px;
-			height: 50%;
+			height: 500px;
 		}
+		#player {
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 10px;
+			margin-bottom: 10px;
 		#map {
 			float: right;
 			width: 60%;
 			min-width:200px;
 			min-height: 200px;
 			background: green;
-			margin-top:20px;
-			height:50%;
+			margin-top:0;
+			height:500px;
 		}
 		#login-link {
 			display: none;
