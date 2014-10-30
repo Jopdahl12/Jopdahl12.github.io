@@ -210,13 +210,14 @@ function handleAPILoaded() {
         // At this time, you need to explicitly specify channel==channelId.
         // See https://developers.google.com/youtube/analytics/v1/#ids
         ids: 'channel==' + channelId,
-        dimensions: 'day',
+        dimensions:province,
         sort: 'day',
         // See https://developers.google.com/youtube/analytics/v1/available_reports
         // for details about the different filters and metrics you can request
         // if the "dimensions" parameter value is "day".
-        metrics: 'views',
-        filters: 'video==' + videoId
+        metrics=views,
+        filters=claimedStatue==claimed;country==US
+        sort=province
       });
 
       request.execute(function(response) {
@@ -234,65 +235,6 @@ function handleAPILoaded() {
     }
   }
 
-  // This boilerplate code takes a Date object and returns a YYYY-MM-DD string.
-  function formatDateString(date) {
-    var yyyy = date.getFullYear().toString();
-    var mm = padToTwoCharacters(date.getMonth() + 1);
-    var dd = padToTwoCharacters(date.getDate());
+  
 
-    return yyyy + '-' + mm + '-' + dd;
-  }
-
-  // If number is a single digit, prepend a '0'. Otherwise, return the number
-  //  as a string.
-  function padToTwoCharacters(number) {
-    if (number < 10) {
-      return '0' + number;
-    } else {
-      return number.toString();
-    }
-  }
-
-  // Call the Google Chart Tools API to generate a chart of Analytics data.
-  function displayChart(videoId, response) {
-    if ('rows' in response) {
-      hideMessage();
-
-      // The columnHeaders property contains an array of objects representing
-      // each column's title -- e.g.: [{name:"day"},{name:"views"}]
-      // We need these column titles as a simple array, so we call jQuery.map()
-      // to get each element's "name" property and create a new array that only
-      // contains those values.
-      var columns = $.map(response.columnHeaders, function(item) {
-        return item.name;
-      });
-      // The google.visualization.arrayToDataTable() function wants an array
-      // of arrays. The first element is an array of column titles, calculated
-      // above as "columns". The remaining elements are arrays that each
-      // represent a row of data. Fortunately, response.rows is already in
-      // this format, so it can just be concatenated.
-      // See https://developers.google.com/chart/interactive/docs/datatables_dataviews#arraytodatatable
-      var chartDataArray = [columns].concat(response.rows);
-      var chartDataTable = google.visualization.arrayToDataTable(chartDataArray);
-
-      var chart = new google.visualization.LineChart(document.getElementById('chart'));
-      chart.draw(chartDataTable, {
-        // Additional options can be set if desired as described at:
-        // https://developers.google.com/chart/interactive/docs/reference#visdraw
-        title: 'Views per Day of Video ' + videoId
-      });
-    } else {
-      displayMessage('No data available for video ' + videoId);
-    }
-  }
-
-  // This helper method displays a message on the page.
-  function displayMessage(message) {
-    $('#message').text(message).show();
-  }
-
-  // This helper method hides a previously displayed message on the page.
-  function hideMessage() {
-    $('#message').hide();
-  }
-})();
+  

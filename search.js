@@ -34,7 +34,8 @@ function createList(str) {
 }
 
 function selectVid(ID) {
-	
+	var pickVideo;
+	//var pickVideo = 
 	console.log('clciked');
 	playVideo(ID);
 }
@@ -50,3 +51,4 @@ function clearList() {
 	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
 }
 
+// FIRST NEED to get the views of what region they are coming from 
