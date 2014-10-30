@@ -74,7 +74,6 @@ function createList(str) {
 	entry5.id = '5';
 	list.appendChild(entry5);
 	}
-}
 
 document.getElementById('1').addEventListener('click', function(){
 	//Juan's func(document.getElementById('1').lastChild)
