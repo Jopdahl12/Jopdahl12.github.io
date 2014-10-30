@@ -245,6 +245,13 @@ function displayMessage(message) {
   function hideMessage() {
     $('#message').hide();
   }
+    function formatDateString(date) {
+    var yyyy = date.getFullYear().toString();
+    var mm = padToTwoCharacters(date.getMonth() + 1);
+    var dd = padToTwoCharacters(date.getDate());
+
+    return yyyy + '-' + mm + '-' + dd;
+  }
   
 
   
