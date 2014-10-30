@@ -94,6 +94,7 @@ function handleAPILoaded() {
       if ('error' in response) {
         displayMessage(response.error.message);
       } else {
+      console.log(response.items[0].id);
         // We need the channel's channel ID to make calls to the Analytics API.
         // The channel ID value has the form "UCdLFeWKpkLhkguiMZUp8lWA".
         channelId = response.items[0].id;
@@ -232,7 +233,8 @@ function handleAPILoaded() {
       // The currently authenticated user's channel ID is not available.
       displayMessage('The YouTube channel ID for the current user is not available.');
     }
-      function displayMessage(message) {
+    }
+function displayMessage(message) {
     $('#message').text(message).show();
   }
 
@@ -240,7 +242,7 @@ function handleAPILoaded() {
   function hideMessage() {
     $('#message').hide();
   }
-  }
+
 })();
   
 
