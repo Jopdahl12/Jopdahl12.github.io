@@ -49,7 +49,7 @@ function selectVid(ID) {
 	//initialize(displayVideoAnalytics(ID));
 	
 }
-function getLocation(ID, videoId){
+//function getLocation(ID, videoId){
 	function initialize() {
 	console.log("initializing");
 	    var myLatLng = new google.maps.LatLng(-34.397, 150.644);
@@ -70,7 +70,7 @@ function getLocation(ID, videoId){
 	//initialize(displayVideoAnalytics(videoId));
 	google.maps.event.addDomListener(window, 'load', initialize);
 	
-}
+	//}
 function getUserChannel() {
   // https://developers.google.com/youtube/v3/docs/channels/list
   var request = gapi.client.youtube.channels.list({
