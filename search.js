@@ -73,8 +73,11 @@ function createList(str) {
 	entry5.className = "theseVids";
 	entry5.id = '5';
 	list.appendChild(entry5);
-	}
+	
+	afterListCreated();
+}
 
+function afterListCreated() {
 document.getElementById('1').addEventListener('click', function(){
 	//Juan's func(document.getElementById('1').lastChild)
 	console.log('clicked');
@@ -100,6 +103,7 @@ document.getElementById('5').addEventListener('click', function(){
 	console.log('clicked');
 	playVid(document.getElementById('5').lastChild);
 });
+}
 
 function playVideo(ID) {
 	var source;
