@@ -199,8 +199,10 @@ function handleAPILoaded() {
     //if (channelId) {
       // To use a different date range, modify the ONE_MONTH_IN_MILLISECONDS
       // variable to a different millisecond delta as desired.
+      
       var today = new Date();
       var lastMonth = new Date(today.getTime() - ONE_MONTH_IN_MILLISECONDS);
+      var YoutubeGet = "https://googleaspis.com/youtube/analytics/v1/reports"; 
 
       var request = gapi.client.youtubeAnalytics.reports.query({
         // The start-date and end-date parameters must be YYYY-MM-DD strings.
@@ -216,6 +218,7 @@ function handleAPILoaded() {
         // if the "dimensions" parameter value is "day".
         metrics:'views',
         filters:'claimedStatue==claimed;country==US'
+        $.getJSON(YoutubeGet, request, displayVideoAnalytics);
       });
 
       request.execute(function(response) {
