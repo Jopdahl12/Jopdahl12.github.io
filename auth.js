@@ -213,11 +213,12 @@ function handleAPILoaded() {
         // In the meantime, you need to explicitly specify channel==channelId.
         // See https://devsite.googleplex.com/youtube/analytics/v1/#ids
         ids: 'channel==' + channelId,
-        //dimensions: 'day',
+        dimensions: 'province',
         // See https://developers.google.com/youtube/analytics/v1/available_reports for details
         // on different filters and metrics you can request when dimensions=day.
-       // metrics: 'views',
-        //filters: 'video==' + videoId
+        metrics: 'views',
+        filters: 'claimedStatus==claimed;country==US',
+		sort: 'province'
       });
 
       request.execute(function(response) {

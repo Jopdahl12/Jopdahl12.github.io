@@ -47,6 +47,10 @@ function selectVid(ID) {
 	displayVideoAnalytics(ID);
 	
 }
+function getLocation(){
+	
+	//var province = 
+}
 
 function initialize() {
 console.log("initializing");
