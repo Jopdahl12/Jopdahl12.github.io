@@ -68,7 +68,8 @@ console.log('handlingresult...');
 // http://code.google.com/p/google-api-javascript-client/wiki/GettingStarted#Loading_the_Client
 function loadAPIClientInterfaces() {
 	console.log('loading.....');
-  gapi.client.load('youtube', 'v3').then(handleAPILoaded).then(function () {
+  gapi.client.load('youtube', 'v3').then(function () {
+  	handleAPILoaded();
   	gapi.client.load('youtubeAnalytics', 'v1', function(){
   		getUserChannel();
   		});
