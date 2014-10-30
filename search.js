@@ -46,7 +46,7 @@ function selectVid(ID) {
 	
 	displayVideoAnalytics(ID);
 	//getUserChannel(ID);
-	initialize(displayVideoAnalytics(videoId));
+	initialize(displayVideoAnalytics(ID));
 	
 }
 function getLocation(){
