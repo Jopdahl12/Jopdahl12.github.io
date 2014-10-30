@@ -305,4 +305,3 @@ function handleAPILoaded() {
   function hideMessage() {
     $('#message').hide();
   }
-})();
