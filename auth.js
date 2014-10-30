@@ -215,7 +215,7 @@ function handleAPILoaded() {
         // See https://developers.google.com/youtube/analytics/v1/available_reports
         // for details about the different filters and metrics you can request
         // if the "dimensions" parameter value is "day".
-        metrics=views
+        metrics:'views',
         filters=claimedStatue==claimed;country==US
         sort=province
       });
