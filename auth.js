@@ -209,7 +209,7 @@ function handleAPILoaded() {
         // At this time, you need to explicitly specify channel==channelId.
         // See https://developers.google.com/youtube/analytics/v1/#ids
         ids: 'channel==MINE',
-        dimensions:province,
+        dimensions:'province',
         sort:'province',
         // See https://developers.google.com/youtube/analytics/v1/available_reports
         // for details about the different filters and metrics you can request
