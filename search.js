@@ -27,13 +27,15 @@ function createList(str) {
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
 		entry.className = "theseVids";
+		entry.id = array.items[i].id.videoId;
 		entry.onclick = selectVid;
 		list.appendChild(entry);
 }
 }
 
-function selectVid() {
+function selectVid(ID) {
 	//Juan
+	console.log('clciked');
 	playVideo(ID);
 }
 
