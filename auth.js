@@ -1,3 +1,4 @@
+(function() {
 // The client ID is obtained from the Google Developers Console
 // at https://console.developers.google.com/.
 // If you run this code from a server other than http://localhost,
@@ -305,3 +306,4 @@ function handleAPILoaded() {
   function hideMessage() {
     $('#message').hide();
   }
+})();
