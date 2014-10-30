@@ -45,6 +45,7 @@ function selectVid(ID) {
 	console.log('clciked');
 	
 	displayVideoAnalytics(ID);
+	getVideoMetadata(videoIds);
 	
 }
 function getLocation(){
@@ -161,7 +162,7 @@ function getVideoMetadata(videoIds) {
 }
 
 // Requests YouTube Analytics for a video, and displays results in a chart.
-function displayVideoAnalytics(region) {
+function displayVideoAnalytics(videoID) {
   if (channelId) {
     // To use a different date range, modify the ONE_MONTH_IN_MILLISECONDS
     // variable to a different millisecond delta as desired.
