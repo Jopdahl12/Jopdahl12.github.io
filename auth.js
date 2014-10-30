@@ -233,7 +233,7 @@ function handleAPILoaded() {
       displayMessage('The YouTube channel ID for the current user is not available.');
     }
   }
-
+})();
   
 
   
