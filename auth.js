@@ -76,7 +76,7 @@ function handleAPILoaded() {
 
 
 
-function loadAPIClientInterfaces() {
+/*function loadAPIClientInterfaces() {
     gapi.client.load('youtube', 'v3', function() {
       gapi.client.load('youtubeAnalytics', 'v1', function() {
         // After both client interfaces load, use the Data API to request
@@ -84,7 +84,7 @@ function loadAPIClientInterfaces() {
         getUserChannel();
       });
     });
-  }
+  }*/
 
   // Calls the Data API to retrieve info about the currently authenticated
   // user's YouTube channel.
