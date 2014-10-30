@@ -1,8 +1,5 @@
 <html>
 <head>
-<style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtYUMyKaWZZz_T909PIdaKKx-Xx2Lmgoc">
     </script>
@@ -84,7 +81,12 @@
 			background: green;
 			height: 500px;
 			width: 500px;
-			display: block;
+			position: relative;
+		}
+		#map-canvas { 
+			height: 100%; 
+			margin: 0; 
+			padding: 0;
 		}
 		#login-link {
 			display: none;
