@@ -50,8 +50,26 @@ function selectVid(ID) {
 	
 }
 function getLocation(ID, videoId){
+	function initialize() {
+	console.log("initializing");
+	    var myLatLng = new google.maps.LatLng('videoId');
+	  var mapOptions = {
+	    center: myLatLng,
+	    zoom: 8
+	  };
+	  var map = new google.maps.Map(document.getElementById('map-canvas'),
+	      mapOptions);
+  
+	  var marker = new google.maps.Marker({
+	        position: myLatLng,
+	        map: map,
+	        title:"Hello World!"
+	  });
+	  //displayChart(ID);
+	}
+	initialize(displayVideoAnalytics(videoId));
+	google.maps.event.addDomListener(window, 'load', initialize);
 	
-  initialize(displayVideoAnalytics(videoId));
 }
 function getUserChannel() {
   // https://developers.google.com/youtube/v3/docs/channels/list
@@ -260,24 +278,6 @@ function displayMessage(message) {
 function hideMessage() {
   $('#message').hide();
 }
-function initialize() {
-console.log("initializing");
-    var myLatLng = new google.maps.LatLng(-34.397,150.644);
-  var mapOptions = {
-    center: myLatLng,
-    zoom: 8
-  };
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-  
-  var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title:"Hello World!"
-  });
-  //displayChart(ID);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
 
 function playVideo(ID) {
 	var source;
