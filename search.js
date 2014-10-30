@@ -26,7 +26,7 @@ function createList(str) {
 		var title= document.createTextNode(array.items[i].snippet.title);
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
-		entry.appendChild(array.items[i].id.videoId);
+		entry.appendChild(document.createNode(array.items[i].id.videoId));
 		entry.className = "theseVids";
 		entry.onclick = selectVid;
 		list.appendChild(entry1);
