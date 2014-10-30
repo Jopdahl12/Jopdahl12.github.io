@@ -63,7 +63,7 @@ console.log("initializing");
         map: map,
         title:"Hello World!"
   });
-  displayChart(videoID,response);
+  displayChart(ID);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
