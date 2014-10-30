@@ -217,7 +217,7 @@ function handleAPILoaded() {
         // if the "dimensions" parameter value is "day".
         metrics:'views',
         filters:'claimedStatue==claimed;country==US'
-        sort='province'
+        sort:'province'
       });
 
       request.execute(function(response) {
