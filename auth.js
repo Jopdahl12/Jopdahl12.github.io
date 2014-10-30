@@ -206,8 +206,8 @@ function handleAPILoaded() {
 
       var request = gapi.client.youtubeAnalytics.reports.query({
         // The start-date and end-date parameters must be YYYY-MM-DD strings.
-        'start-date': formatDateString(lastMonth),
-        'end-date': formatDateString(today),
+        start-date: '2014-06-01',
+        end-date: '2014-06-20',
         // At this time, you need to explicitly specify channel==channelId.
         // See https://developers.google.com/youtube/analytics/v1/#ids
         ids: 'channel==MINE',
