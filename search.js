@@ -27,15 +27,14 @@ function createList(str) {
 		entry.appendChild(title);
 		entry.className = "theseVids";
 		var ID = array.items[i].id.videoId;
-		entry.addEventListener('click', selectVideo{ID});
+		entry.onclick = selectVideo);
 		list.appendChild(entry);
 	}
 }
 
-function selectVideo(ID) {
+function selectVideo() {
 	//Juan's function
 	console.log('onclick');
-	playVideo(ID);
 }
 
 function playVideo(ID) {
