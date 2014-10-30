@@ -294,6 +294,6 @@ function loadAPIClientInterfaces() {
   function hideMessage() {
     $('#message').hide();
   }
-})();
+})
 
   
