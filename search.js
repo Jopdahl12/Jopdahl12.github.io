@@ -245,9 +245,9 @@ function displayChart(videoId, response) {
       // See https://developers.google.com/chart/interactive/docs/reference#visdraw
       title: 'Views per Day of Video ' + videoId
     });
-  } else {
-    displayMessage('No data available for video ' + videoId);
-  }
+  } //else {
+    //displayMessage('No data available for video ' + videoId);
+  //}
 }
 
 // Helper method to display a message on the page.
