@@ -13,7 +13,7 @@ var ONE_MONTH_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 30;
 
 var channelId;
 
-google.load('visualization', '1.0', {'packages': ['corechart']});
+//google.load('visualization', '1.0', {'packages': ['corechart']});
 
 window.onJSClientLoad = function() {
 	gapi.auth.init(function() {
@@ -81,10 +81,6 @@ function handleAPILoaded() {
 	var searchButton = document.getElementById("search-button");
 	searchButton.disabled = false;
 }
-
-
-
-//Juan- this is where you start
 
 
 
