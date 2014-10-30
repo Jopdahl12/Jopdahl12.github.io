@@ -27,8 +27,7 @@ function createList(str) {
 		entry.appendChild(title);
 		entry.className = "theseVids";
 		var ID = array.items[i].id.videoId;
-		entry.id=ID;
-		entry.onclick = selectVideo(ID);
+		entry.addEventListener('click', selectVideo(ID));
 		list.appendChild(entry);
 	}
 }
