@@ -218,7 +218,7 @@ function padToTwoCharacters(number) {
 }
 
 // Calls the Google Chart Tools API to generate a chart of analytics data.
-function displayChart(videoId, response) {
+/*function displayChart(videoId, response) {
   //if ('rows' in response) {
     //hideMessage();
 
@@ -248,7 +248,7 @@ function displayChart(videoId, response) {
   } //else {
     //displayMessage('No data available for video ' + videoId);
   //}
-  //}
+  //} */
 
 // Helper method to display a message on the page.
 function displayMessage(message) {
