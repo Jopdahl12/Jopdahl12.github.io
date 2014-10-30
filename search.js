@@ -10,10 +10,12 @@ function search() {
   request.execute(function(response) {
     var str = JSON.stringify(response.result);
     localStorage.setItem('str', str);
-    createList(str)});
+    var array= JSON.parse(str);
+    createList(array);
+    });
 }
-function createList(str) {
-	var array= JSON.parse(str);
+
+function createList(array) {
 	console.log(array);
 	var list= document.getElementById("videos");
 	if ($("#videos").has("li").length != 0) {
@@ -34,8 +36,7 @@ function createList(str) {
 }
 
 function selectVid(ID) {
-	var pickVideo;
-	//var pickVideo = 
+	displayVideoAnalytics(ID);
 	console.log('clciked');
 	playVideo(ID);
 }

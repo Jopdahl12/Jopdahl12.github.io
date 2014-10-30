@@ -1,5 +1,29 @@
 <html>
 <head>
+<style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMTiQkM1d7_Fz_Iex8SdL5nycQl2wEPKc">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+          var myLatLng = new google.maps.LatLng(-34.397,150.644);
+        var mapOptions = {
+          center: myLatLng,
+          zoom: 8
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+        
+        var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title:"Hello World!"
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 	<style>
 		body {
 			background: darkgrey; 
@@ -87,6 +111,7 @@
 <iframe id="player" width='640' height='390' frameborder="0"> </iframe>
 </div>
 <div id='map'> 
+<div id="map-canvas"> </div>
 <p id="message" />
 </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

@@ -78,7 +78,7 @@ function handleAPILoaded() {
 
 
 
-
+/*
 // Call the Data API to retrieve information about the currently
   // authenticated user's YouTube channel.
   function getUserChannel() {
@@ -194,15 +194,15 @@ function handleAPILoaded() {
       }
     });
   }
-
+*/
   // This function requests YouTube Analytics data for a video and displays
   // the results in a chart.
   function displayVideoAnalytics(videoId) {
-    if (channelId) {
+    //if (channelId) {
       // To use a different date range, modify the ONE_MONTH_IN_MILLISECONDS
       // variable to a different millisecond delta as desired.
-      var today = new Date();
-      var lastMonth = new Date(today.getTime() - ONE_MONTH_IN_MILLISECONDS);
+      //var today = new Date();
+      //var lastMonth = new Date(today.getTime() - ONE_MONTH_IN_MILLISECONDS);
 
       var request = gapi.client.youtubeAnalytics.reports.query({
         // The start-date and end-date parameters must be YYYY-MM-DD strings.
@@ -210,7 +210,7 @@ function handleAPILoaded() {
         'end-date': formatDateString(today),
         // At this time, you need to explicitly specify channel==channelId.
         // See https://developers.google.com/youtube/analytics/v1/#ids
-        ids: 'channel==' + channelId,
+        ids: 'channel==MINE',
         dimensions:province,
         sort:'province',
         // See https://developers.google.com/youtube/analytics/v1/available_reports
@@ -226,7 +226,11 @@ function handleAPILoaded() {
         if ('error' in response) {
           displayMessage(response.error.message);
         } else {
-          displayChart(videoId, response);
+          initialize();
+          var str= JSON.stringify(response.result);
+          var array = JSON.parse(str);
+          console.log(array);
+          analyzeMapData(array);
         }
       });
     }else {
