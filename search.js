@@ -248,7 +248,7 @@ function displayChart(videoId, response) {
   } //else {
     //displayMessage('No data available for video ' + videoId);
   //}
-}
+  //}
 
 // Helper method to display a message on the page.
 function displayMessage(message) {
