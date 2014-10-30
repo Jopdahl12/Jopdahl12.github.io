@@ -230,7 +230,7 @@ function handleAPILoaded() {
       });
     } else {
       // The currently authenticated user's channel ID is not available.
-      displayMessage('The YouTube channel ID for the current user is not available.');
+      alart(displayMessage('The YouTube channel ID for the current user is not available.'));
     }
   }
 })();
