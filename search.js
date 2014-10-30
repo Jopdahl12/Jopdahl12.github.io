@@ -28,7 +28,7 @@ function createList(str) {
 		entry.appendChild(title);
 		entry.className = "theseVids";
 		entry.onclick = selectVid;
-		list.appendChild(entry1);
+		list.appendChild(entry);
 }
 }
 
