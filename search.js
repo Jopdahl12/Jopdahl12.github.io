@@ -25,10 +25,9 @@ function createList(array) {
 		var entry = document.createElement('li');
 		var thumbnail = document.createElement('img');
 		thumbnail.src= array.items[i].snippet.thumbnails.default.url;
-		var newline = document.createTextNode('\n');
 		var title= document.createTextNode(array.items[i].snippet.title);
+		title.display = block;
 		entry.appendChild(thumbnail);
-		entry.appendChild(newline);
 		entry.appendChild(title);
 		entry.className = "theseVids";
 		var ID= array.items[i].id.videoId;
