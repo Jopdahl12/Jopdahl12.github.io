@@ -195,7 +195,7 @@ function handleAPILoaded() {
 */
   // This function requests YouTube Analytics data for a video and displays
   // the results in a chart.
-  function displayVideoAnalytics(videoId) {
+  function displayVideoAnalytics(region) {
     //if (channelId) {
       // To use a different date range, modify the ONE_MONTH_IN_MILLISECONDS
       // variable to a different millisecond delta as desired.
