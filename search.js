@@ -52,7 +52,7 @@ function selectVid(ID) {
 function getLocation(ID, videoId){
 	function initialize() {
 	console.log("initializing");
-	    var myLatLng = new google.maps.LatLng('ID');
+	    var myLatLng = new google.maps.LatLng(-34.397, 150.644);
 	  var mapOptions = {
 	    center: myLatLng,
 	    zoom: 8
