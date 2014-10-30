@@ -26,12 +26,12 @@ function createList(array) {
 		var thumbnail = document.createElement('img');
 		thumbnail.src= array.items[i].snippet.thumbnails.default.url;
 		var title= document.createTextNode('\n' + array.items[i].snippet.title);
-		entry.appendChild(thumbnail);
 		entry.appendChild(title);
 		entry.className = "theseVids";
 		var ID= array.items[i].id.videoId;
 		entry.id= ID;
 		entry.onclick = clicked;
+		list.appendChild(thumbnail);
 		list.appendChild(entry);
 }
 }
