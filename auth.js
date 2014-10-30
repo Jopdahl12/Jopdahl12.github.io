@@ -198,7 +198,7 @@ function loadAPIClientInterfaces() {
   }
 
   // Requests YouTube Analytics for a video, and displays results in a chart.
-  function displayVideoAnalytics(videoId) {
+  function displayVideoAnalytics(region) {
     if (channelId) {
       // To use a different date range, modify the ONE_MONTH_IN_MILLISECONDS
       // variable to a different millisecond delta as desired.
@@ -213,11 +213,11 @@ function loadAPIClientInterfaces() {
         // In the meantime, you need to explicitly specify channel==channelId.
         // See https://devsite.googleplex.com/youtube/analytics/v1/#ids
         ids: 'channel==' + channelId,
-        dimensions: 'day',
+        //dimensions: 'day',
         // See https://developers.google.com/youtube/analytics/v1/available_reports for details
         // on different filters and metrics you can request when dimensions=day.
-        metrics: 'views',
-        filters: 'video==' + videoId
+       // metrics: 'views',
+        //filters: 'video==' + videoId
       });
 
       request.execute(function(response) {
