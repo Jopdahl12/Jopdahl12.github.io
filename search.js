@@ -42,8 +42,8 @@ function clicked() {
 
 function selectVid(ID) {
 	playVideo(ID);
-	displayVideoAnalytics(ID);
 	console.log('clciked');
+	
 }
 
 function playVideo(ID) {
