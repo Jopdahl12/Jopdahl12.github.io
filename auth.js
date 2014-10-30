@@ -17,7 +17,7 @@ var channelId;
 
 window.onJSClientLoad = function() {
 	gapi.auth.init(function() {
-    window.setTimeout(checkAuth, 1);
+    window.setTimeout(checkAuth, 500);
     });
 };
 // Upon loading, the Google APIs JS client automatically invokes this callback.
