@@ -219,9 +219,10 @@ function handleAPILoaded() {
         // if the "dimensions" parameter value is "day".
         metrics:'views',
         filters:'claimedStatue==claimed;country==US'
-        //$.getJSONP(YoutubeGet, request, displayVideoAnalytics);
+        
         
       });
+      $.getJSONP(YoutubeGet, request, displayVideoAnalytics);
       request.execute(function(response) {
         // This function is called regardless of whether the request succeeds.
         // The response contains YouTube Analytics data or an error message.

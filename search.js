@@ -42,6 +42,10 @@ function clicked() {
 
 function selectVid(ID) {
 	playVideo(ID);
+<<<<<<< HEAD
+=======
+	//displayVideoAnalytics(ID);
+>>>>>>> FETCH_HEAD
 	console.log('clciked');
 	
 }
