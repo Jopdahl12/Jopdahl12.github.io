@@ -88,7 +88,7 @@ function handleAPILoaded() {
 
   // Calls the Data API to retrieve info about the currently authenticated
   // user's YouTube channel.
-  function getUserChannel() {
+  /*function getUserChannel() {
     // https://developers.google.com/youtube/v3/docs/channels/list
     var request = gapi.client.youtube.channels.list({
       // "mine: true" indicates that you want to retrieve the authenticated user's channel.
