@@ -9,6 +9,7 @@ function search() {
 
   request.execute(function(response) {
     var str = JSON.stringify(response.result);
+    localStorage.setItem('str', str);
     createList(str)});
 }
 function createList(str) {
@@ -26,7 +27,7 @@ function createList(str) {
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
 		entry.className = "theseVids";
-		var ID = array.items[i].id.videoId;
+		entry.id = array.items[i].id.videoId;
 		entry.onclick = selectVideo;
 		list.appendChild(entry);
 	}
@@ -35,6 +36,8 @@ function createList(str) {
 function selectVideo() {
 	//Juan's function
 	console.log('onclick');
+	console.log(entry);
+
 }
 
 function playVideo(ID) {
