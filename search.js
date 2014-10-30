@@ -25,7 +25,7 @@ function createList(array) {
 		var entry = document.createElement('li');
 		var thumbnail = document.createElement('img');
 		thumbnail.src= array.items[i].snippet.thumbnails.default.url;
-		var newline = document.createTextNode('/n');
+		var newline = document.createTextNode('\n');
 		var title= document.createTextNode(array.items[i].snippet.title);
 		entry.appendChild(thumbnail);
 		entry.appendChild(newline);
