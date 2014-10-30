@@ -63,9 +63,9 @@ function loadAPIClientInterfaces() {
 	console.log('loading.....');
   gapi.client.load('youtube', 'v3').then(function () {
   	handleAPILoaded();
-  	});
   gapi.client.load('youtubeAnalytics', 'v1').then(function(){
   		getUserChannel();
+  	});
   	});
 }
 
