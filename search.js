@@ -36,7 +36,7 @@ function createList(str) {
 function selectVid(ID) {
 	//Juan
 	console.log('clciked');
-	playVideo(ID);
+	//playVideo(ID);
 }
 
 function playVideo(ID) {
