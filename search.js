@@ -219,8 +219,8 @@ function padToTwoCharacters(number) {
 
 // Calls the Google Chart Tools API to generate a chart of analytics data.
 function displayChart(videoId, response) {
-  if ('rows' in response) {
-    hideMessage();
+  //if ('rows' in response) {
+    //hideMessage();
 
     // The columnHeaders property contains an array of objects representing
     // each column's title – e.g.: [{name:"day"},{name:"views"}]
