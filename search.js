@@ -34,7 +34,7 @@ function createList(str) {
 }
 
 function selectVid(ID) {
-	//Juan
+	
 	console.log('clciked');
 	playVideo(ID);
 }
@@ -49,3 +49,4 @@ function clearList() {
 	var entry = document.getElementById("videos");
 	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
 }
+
