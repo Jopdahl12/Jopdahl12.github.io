@@ -227,7 +227,7 @@ function displayChart(videoId, response) {
     // We need these column titles as a simple array, so we call jQuery.map()
     // to get each element's "name" property and create a new array that only
     // contains those values.
-    var columns = $.map(response.columnHeaders, function(item) {
+    var columns = jquery.map(response.columnHeaders, function(item) {
       return item.name;
     });
     // The google.visualization.arrayToDataTable() wants an array of arrays.
