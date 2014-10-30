@@ -76,14 +76,22 @@ function handleAPILoaded() {
 
 
 
-/*
-// Call the Data API to retrieve information about the currently
-  // authenticated user's YouTube channel.
+function loadAPIClientInterfaces() {
+    gapi.client.load('youtube', 'v3', function() {
+      gapi.client.load('youtubeAnalytics', 'v1', function() {
+        // After both client interfaces load, use the Data API to request
+        // information about the authenticated user's channel.
+        getUserChannel();
+      });
+    });
+  }
+
+  // Calls the Data API to retrieve info about the currently authenticated
+  // user's YouTube channel.
   function getUserChannel() {
-    // Also see: https://developers.google.com/youtube/v3/docs/channels/list
+    // https://developers.google.com/youtube/v3/docs/channels/list
     var request = gapi.client.youtube.channels.list({
-      // Setting the "mine" request parameter's value to "true" indicates that
-      // you want to retrieve the currently authenticated user's channel.
+      // "mine: true" indicates that you want to retrieve the authenticated user's channel.
       mine: true,
       part: 'id,contentDetails'
     });
@@ -92,25 +100,23 @@ function handleAPILoaded() {
       if ('error' in response) {
         displayMessage(response.error.message);
       } else {
-      console.log(response.items[0].id);
-        // We need the channel's channel ID to make calls to the Analytics API.
-        // The channel ID value has the form "UCdLFeWKpkLhkguiMZUp8lWA".
+        // We will need the channel's channel ID to make calls to the
+        // Analytics API. The channel ID looks like "UCdLFeWKpkLhkguiMZUp8lWA".
         channelId = response.items[0].id;
-        // Retrieve the playlist ID that uniquely identifies the playlist of
-        // videos uploaded to the authenticated user's channel. This value has
-        // the form "UUdLFeWKpkLhkguiMZUp8lWA".
+        // This string, of the form "UUdLFeWKpkLhkguiMZUp8lWA", is a unique ID
+        // for a playlist of videos uploaded to the authenticated user's channel.
         var uploadsListId = response.items[0].contentDetails.relatedPlaylists.uploads;
-        // Use the playlist ID to retrieve the list of uploaded videos.
+        // Use the uploads playlist ID to retrieve the list of uploaded videos.
         getPlaylistItems(uploadsListId);
       }
     });
   }
 
-  // Call the Data API to retrieve the items in a particular playlist. In this
+  // Calls the Data API to retrieve the items in a particular playlist. In this
   // example, we are retrieving a playlist of the currently authenticated user's
   // uploaded videos. By default, the list returns the most recent videos first.
   function getPlaylistItems(listId) {
-    // See https://developers.google.com/youtube/v3/docs/playlistitems/list
+    // https://developers.google.com/youtube/v3/docs/playlistItems/list
     var request = gapi.client.youtube.playlistItems.list({
       playlistId: listId,
       part: 'snippet'
@@ -121,15 +127,15 @@ function handleAPILoaded() {
         displayMessage(response.error.message);
       } else {
         if ('items' in response) {
-          // The jQuery.map() function iterates through all of the items in
-          // the response and creates a new array that only contains the
-          // specific property we're looking for: videoId.
+          // jQuery.map() iterates through all of the items in the response and
+          // creates a new array that only contains the specific property we're
+          // looking for: videoId.
           var videoIds = $.map(response.items, function(item) {
             return item.snippet.resourceId.videoId;
           });
 
           // Now that we know the IDs of all the videos in the uploads list,
-          // we can retrieve information about each video.
+          // we can retrieve info about each video.
           getVideoMetadata(videoIds);
         } else {
           displayMessage('There are no videos in your channel.');
@@ -138,12 +144,12 @@ function handleAPILoaded() {
     });
   }
 
-  // Given an array of video IDs, this function obtains metadata about each
-  // video and then uses that metadata to display a list of videos.
+  // Given an array of video ids, obtains metadata about each video and then
+  // uses that metadata to display a list of videos to the user.
   function getVideoMetadata(videoIds) {
     // https://developers.google.com/youtube/v3/docs/videos/list
     var request = gapi.client.youtube.videos.list({
-      // The 'id' property's value is a comma-separated string of video IDs.
+      // The 'id' property value is a comma-separated string of video IDs.
       id: videoIds.join(','),
       part: 'id,snippet,statistics'
     });
@@ -152,12 +158,11 @@ function handleAPILoaded() {
       if ('error' in response) {
         displayMessage(response.error.message);
       } else {
-        // Get the jQuery wrapper for the #video-list element before starting
-        // the loop.
+        // Get the jQuery wrapper for #video-list once outside the loop.
         var videoList = $('#video-list');
         $.each(response.items, function() {
-          // Exclude videos that do not have any views, since those videos
-          // will not have any interesting viewcount Analytics data.
+          // Exclude videos that don't have any views, since those videos
+          // will not have any interesting viewcount analytics data.
           if (this.statistics.viewCount == 0) {
             return;
           }
@@ -170,7 +175,7 @@ function handleAPILoaded() {
           // add a click handler that will display Analytics data when invoked.
           var liElement = $('<li>');
           var aElement = $('<a>');
-          // Setting the href value to '#' ensures that the browser renders the
+          // The dummy href value of '#' ensures that the browser renders the
           // <a> element as a clickable link.
           aElement.attr('href', '#');
           aElement.text(title);
@@ -186,84 +191,109 @@ function handleAPILoaded() {
         });
 
         if (videoList.children().length == 0) {
-          // Display a message if the channel does not have any viewed videos.
           displayMessage('Your channel does not have any videos that have been viewed.');
         }
       }
     });
   }
-*/
-  // This function requests YouTube Analytics data for a video and displays
-  // the results in a chart.
-  function displayVideoAnalytics(region) {
-    //if (channelId) {
+
+  // Requests YouTube Analytics for a video, and displays results in a chart.
+  function displayVideoAnalytics(videoId) {
+    if (channelId) {
       // To use a different date range, modify the ONE_MONTH_IN_MILLISECONDS
       // variable to a different millisecond delta as desired.
-      
       var today = new Date();
       var lastMonth = new Date(today.getTime() - ONE_MONTH_IN_MILLISECONDS);
-      var YoutubeGet = "https://googleaspis.com/youtube/analytics/v1/reports"; 
 
       var request = gapi.client.youtubeAnalytics.reports.query({
-        // The start-date and end-date parameters must be YYYY-MM-DD strings.
-	    'start-date': formatDateString(lastMonth),
-	     'end-date': formatDateString(today),
-       
-        // At this time, you need to explicitly specify channel==channelId.
-        // See https://developers.google.com/youtube/analytics/v1/#ids
-        ids: 'channel==MINE',
-        dimensions:'province',
-        sort:'province',
-        // See https://developers.google.com/youtube/analytics/v1/available_reports
-        // for details about the different filters and metrics you can request
-        // if the "dimensions" parameter value is "day".
-        metrics:'views',
-        filters:'claimedStatue==claimed;country==US'
-        
-        
+        // The start-date and end-date parameters need to be YYYY-MM-DD strings.
+        'start-date': formatDateString(lastMonth),
+        'end-date': formatDateString(today),
+        // A future YouTube Analytics API release should support channel==default.
+        // In the meantime, you need to explicitly specify channel==channelId.
+        // See https://devsite.googleplex.com/youtube/analytics/v1/#ids
+        ids: 'channel==' + channelId,
+        dimensions: 'day',
+        // See https://developers.google.com/youtube/analytics/v1/available_reports for details
+        // on different filters and metrics you can request when dimensions=day.
+        metrics: 'views',
+        filters: 'video==' + videoId
       });
+
       request.execute(function(response) {
         // This function is called regardless of whether the request succeeds.
-        // The response contains YouTube Analytics data or an error message.
+        // The response either has valid analytics data or an error message.
         if ('error' in response) {
           displayMessage(response.error.message);
         } else {
-          initialize();
-          var str= JSON.stringify(response.result);
-          var array = JSON.parse(str);
-          console.log(array);
-          analyzeMapData(array);
+          displayChart(videoId, response);
         }
-        $.getJSONP(YoutubeGet, request, displayVideoAnalytics);
-		
       });
-      }
-    /*}else {
-      // The currently authenticated user's channel ID is not available.
-      displayMessage('The YouTube channel ID for the current user is not available.');
+    } else {
+      displayMessage('The YouTube user id for the current user is not available.');
     }
-    }*/
-function displayMessage(message) {
-    $('#message').text(message).show();
   }
 
-  // This helper method hides a previously displayed message on the page.
-  function hideMessage() {
-    $('#message').hide();
-  }
-    function formatDateString(date) {
+  // Boilerplate code to take a Date object and return a YYYY-MM-DD string.
+  function formatDateString(date) {
     var yyyy = date.getFullYear().toString();
     var mm = padToTwoCharacters(date.getMonth() + 1);
     var dd = padToTwoCharacters(date.getDate());
 
     return yyyy + '-' + mm + '-' + dd;
   }
-    function padToTwoCharacters(number) {
+
+  // If number is a single digit, prepend a '0'. Otherwise, return it as a string.
+  function padToTwoCharacters(number) {
     if (number < 10) {
       return '0' + number;
     } else {
       return number.toString();
     }
   }
+
+  // Calls the Google Chart Tools API to generate a chart of analytics data.
+  function displayChart(videoId, response) {
+    if ('rows' in response) {
+      hideMessage();
+
+      // The columnHeaders property contains an array of objects representing
+      // each column's title – e.g.: [{name:"day"},{name:"views"}]
+      // We need these column titles as a simple array, so we call jQuery.map()
+      // to get each element's "name" property and create a new array that only
+      // contains those values.
+      var columns = $.map(response.columnHeaders, function(item) {
+        return item.name;
+      });
+      // The google.visualization.arrayToDataTable() wants an array of arrays.
+      // The first element is an array of column titles, calculated above as
+      // "columns". The remaining elements are arrays that each represent
+      // a row of data. Fortunately, response.rows is already in this format,
+      // so it can just be concatenated.
+      // See https://developers.google.com/chart/interactive/docs/datatables_dataviews#arraytodatatable
+      var chartDataArray = [columns].concat(response.rows);
+      var chartDataTable = google.visualization.arrayToDataTable(chartDataArray);
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart'));
+      chart.draw(chartDataTable, {
+        // Additional options can be set if desired.
+        // See https://developers.google.com/chart/interactive/docs/reference#visdraw
+        title: 'Views per Day of Video ' + videoId
+      });
+    } else {
+      displayMessage('No data available for video ' + videoId);
+    }
+  }
+
+  // Helper method to display a message on the page.
+  function displayMessage(message) {
+    $('#message').text(message).show();
+  }
+
+  // Helper method to hide a previously displayed message on the page.
+  function hideMessage() {
+    $('#message').hide();
+  }
+})();
 
   
