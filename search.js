@@ -40,7 +40,7 @@ function createList(array) {
       vidbar.appendChild(entry);
   }
   else {
-	 for (i=0;i<arrar.pageinfo.resultsPerPage;i++){
+	 for (i=0;i<arrar.pageInfo.resultsPerPage;i++){
 		  var entry = document.createElement('div');
      var entry2 = document.createElement('div');
 		  var thumbnail = document.createElement('img');
