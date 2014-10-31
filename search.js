@@ -8,14 +8,6 @@ function search() {
   });
 
   request.execute(function(response) {
-    if ('error' in response) {
-      var vidbar = document.getElementById("vidbar");
-      var entry = document.createElement("div");
-      var text = document.createTextNode("Error: invalid search. Please search another topic.");
-      entry.className = "error";
-      entry.appendChild(text);
-      vidbar.appendChild(entry);
-    }
     var str = JSON.stringify(response.result);
     localStorage.setItem('str', str);
     var array= JSON.parse(str);
@@ -29,22 +21,32 @@ function createList(array) {
 	if ($("#vidbar:has(*)").length) {
 		clearList();
 		}
-	for (i=0;i<5;i++){
-		var entry = document.createElement('div');
-    var entry2 = document.createElement('div');
-		var thumbnail = document.createElement('img');
-		thumbnail.src= array.items[i].snippet.thumbnails.default.url;
-		var title= document.createTextNode(array.items[i].snippet.title);
-    entry2.className = "thumbs";
-		entry2.appendChild(thumbnail);
-    entry.appendChild(entry2);
-		entry.appendChild(title);
-		entry.className = "theseVids";
-		var ID= array.items[i].id.videoId;
-		entry.id= ID;
-		entry.onclick = clicked;
-		container.appendChild(entry);
-}
+  if (array.items.length == 0) {
+      var vidbar = document.getElementById("vidbar");
+      var entry = document.createElement("div");
+      var text = document.createTextNode("Error: invalid search. Please search another topic.");
+      entry.className = "error";
+      entry.appendChild(text);
+      vidbar.appendChild(entry);
+  }
+  else {
+	 for (i=0;i<5;i++){
+		  var entry = document.createElement('div');
+     var entry2 = document.createElement('div');
+		  var thumbnail = document.createElement('img');
+		  thumbnail.src= array.items[i].snippet.thumbnails.default.url;
+		  var title= document.createTextNode(array.items[i].snippet.title);
+      entry2.className = "thumbs";
+		  entry2.appendChild(thumbnail);
+      entry.appendChild(entry2);
+		  entry.appendChild(title);
+		  entry.className = "theseVids";
+		  var ID= array.items[i].id.videoId;
+		  entry.id= ID;
+		  entry.onclick = clicked;
+		  container.appendChild(entry);
+    }
+  }
 }
 
 function clicked() {
