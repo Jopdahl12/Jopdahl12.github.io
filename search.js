@@ -18,7 +18,7 @@ function search() {
 function createList(array) {
 	console.log(array);
 	var container= document.getElementById("vidbar");
-	if ($("#videos").has("li").length != 0) {
+	if ($("#videos").has("div").length != 0) {
 		clearList();
 		}
 	for (i=0;i<5;i++){
