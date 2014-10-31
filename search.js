@@ -277,7 +277,7 @@ function displayMessage(message) {
 function hideMessage() {
   $('#message').hide();
 }
-
+*/
 function playVideo(ID) {
 	var source;
 	var source= 'http://www.youtube.com/embed/' + ID; 
@@ -287,4 +287,4 @@ function playVideo(ID) {
 function clearList() {
 	var entry = document.getElementById("videos");
 	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
-  */
+}
