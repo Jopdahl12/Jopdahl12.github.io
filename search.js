@@ -26,6 +26,7 @@ function createList(array) {
 		var thumbnail = document.createElement('img');
 		thumbnail.src= array.items[i].snippet.thumbnails.default.url;
 		var title= document.createTextNode(array.items[i].snippet.title);
+    thumbnail.className = "thumbs";
 		entry.appendChild(thumbnail);
 		entry.appendChild(title);
 		entry.className = "theseVids";
