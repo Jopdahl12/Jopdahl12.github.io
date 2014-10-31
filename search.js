@@ -8,11 +8,21 @@ function search() {
   });
 
   request.execute(function(response) {
-    var str = JSON.stringify(response.result);
-    localStorage.setItem('str', str);
-    var array= JSON.parse(str);
-    createList(array);
-    });
+    if ('error' in response) {
+      var vidbar = document.getElementById("vidbar");
+      var entry = document.createElement("div");
+      var text = document.createTextNode("Error: invalid search. Please search another topic.");
+      entry.className = "error";
+      entry.appendChild(text);
+      vidbar.appendChild(entry);
+    }
+    else {
+      var str = JSON.stringify(response.result);
+      localStorage.setItem('str', str);
+      var array= JSON.parse(str);
+      createList(array);
+      });
+    }
 }
 
 function createList(array) {
