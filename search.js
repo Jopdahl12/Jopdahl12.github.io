@@ -17,22 +17,22 @@ function search() {
 
 function createList(array) {
 	console.log(array);
-	var list= document.getElementById("videos");
+	var container= document.getElementById("vidbar");
 	if ($("#videos").has("li").length != 0) {
 		clearList();
 		}
 	for (i=0;i<5;i++){
-		var entry = document.createElement('li');
+		var entry = document.createElement('div');
 		var thumbnail = document.createElement('img');
 		thumbnail.src= array.items[i].snippet.thumbnails.default.url;
-		var title= document.createTextNode('\n' + array.items[i].snippet.title);
+		var title= document.createTextNode(array.items[i].snippet.title);
+		entry.appendChild(thumbnail);
 		entry.appendChild(title);
 		entry.className = "theseVids";
 		var ID= array.items[i].id.videoId;
 		entry.id= ID;
 		entry.onclick = clicked;
-		list.appendChild(thumbnail);
-		list.appendChild(entry);
+		container.appendChild(entry);
 }
 }
 
@@ -288,6 +288,3 @@ function playVideo(ID) {
 function clearList() {
 	var entry = document.getElementById("videos");
 	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
-}
-
-// FIRST NEED to get the views of what region they are coming from 
