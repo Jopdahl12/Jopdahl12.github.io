@@ -288,6 +288,6 @@ function playVideo(ID) {
 	videoPlay.src= source;
 }
 function clearList() {
-	var entry = document.getElementById("videos");
+	var entry = document.getElementById("vidbar");
 	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
 }
