@@ -23,11 +23,13 @@ function createList(array) {
 		}
 	for (i=0;i<5;i++){
 		var entry = document.createElement('div');
+    var entry2 = document.createElement('div');
 		var thumbnail = document.createElement('img');
 		thumbnail.src= array.items[i].snippet.thumbnails.default.url;
 		var title= document.createTextNode(array.items[i].snippet.title);
-    thumbnail.className = "thumbs";
-		entry.appendChild(thumbnail);
+    entry2.className = "thumbs";
+		entry2.appendChild(thumbnail);
+    entry.appendChild(entry2);
 		entry.appendChild(title);
 		entry.className = "theseVids";
 		var ID= array.items[i].id.videoId;
