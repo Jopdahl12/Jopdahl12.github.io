@@ -21,8 +21,8 @@ function search() {
       localStorage.setItem('str', str);
       var array= JSON.parse(str);
       createList(array);
-      });
-    }
+      }
+    });
 }
 
 function createList(array) {
