@@ -44,12 +44,11 @@ function selectVid(ID) {
 	playVideo(ID);
 	console.log('clciked');
 	
-	displayVideoAnalytics(ID);
+	//displayVideoAnalytics(ID);
 	//getUserChannel(ID);
 	//initialize(displayVideoAnalytics(ID));
-	
 }
-//function getLocation(ID, videoId){
+/*function getLocation(ID, videoId){
 	function initialize() {
 	console.log("initializing");
 	    var myLatLng = new google.maps.LatLng(-34.397, 150.644);
@@ -269,7 +268,7 @@ function padToTwoCharacters(number) {
   //}
   //} */
 
-// Helper method to display a message on the page.
+/* Helper method to display a message on the page.
 function displayMessage(message) {
   $('#message').text(message).show();
 }
@@ -288,3 +287,4 @@ function playVideo(ID) {
 function clearList() {
 	var entry = document.getElementById("videos");
 	while ( entry.firstChild ) entry.removeChild( entry.firstChild );
+  */
