@@ -68,6 +68,7 @@ function selectVid(ID) {
 	console.log('clciked');
 }
 
+
 function playVideo(ID) {
 	var source;
 	var source= 'http://www.youtube.com/embed/' + ID; 
