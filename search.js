@@ -71,6 +71,7 @@ function selectVid(ID) {
 	//getUserChannel(ID);
 	//initialize(displayVideoAnalytics(ID));
 }
+
 /*function getLocation(ID, videoId){
 	function initialize() {
 	console.log("initializing");
