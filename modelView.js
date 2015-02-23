@@ -194,7 +194,7 @@ ListController.prototype = {
             this._model.addItem(item);
             this._view._elements['taskbox'].value = "";
             this._view._elements['priority'].value = "High";
-            this._view._elements['due'].value = None;
+            this._view._elements['due'].placeholder = "mm/dd/yyy";
         }
     },
 
