@@ -193,8 +193,8 @@ ListController.prototype = {
         if (item) {
             this._model.addItem(item);
             this._view._elements['taskbox'].value = "";
-            this._view._elements['priority'].value = High;
-            this._view._elements['due'].value = "";
+            this._view._elements['priority'].value = "High";
+            this._view._elements['due'].value = None;
         }
     },
 
